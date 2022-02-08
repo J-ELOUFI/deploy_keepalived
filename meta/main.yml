@@ -1,0 +1,22 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: keepalived
+  author: MH/A21OPAA
+  description: "Installation et paramétrage de keepalived"
+  company: MH
+  license: Apache
+  min_ansible_version: 2.10
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+  galaxy_tags:
+    - web
+    - networking
+    - cloud
+    - haproxy
+    - loadbalancer
+    - http
