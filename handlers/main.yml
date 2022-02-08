@@ -1,0 +1,14 @@
+---
+- name: restart keepalived
+  ansible.builtin.service:
+    name: keepalived
+    state: restarted
+  become: yes 
+
+- name: restart rsyslog
+  ansible.builtin.systemd:
+    name: rsyslog
+    state: restarted	
+  become: yes
+
+...

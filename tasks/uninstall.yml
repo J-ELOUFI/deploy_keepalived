@@ -1,0 +1,14 @@
+ ---
+# tasks file for uninstall
+- name: (uninstall) Stop keepalived if running
+  systemd:
+    name: keepalived
+    state: stopped
+  ignore_errors: yes
+  become: yes
+  
+- name: (uninstall) Remove keepalived package
+  ansible.builtin.package:
+    name: "{{ package_name }}"
+    state: absent
+  become: yes

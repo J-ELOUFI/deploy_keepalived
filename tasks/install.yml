@@ -1,0 +1,18 @@
+---
+- name: import assert.yml
+  ansible.builtin.import_tasks: assert.yml
+  run_once: yes
+  delegate_to: localhost
+    
+- name: install keepalived
+  ansible.builtin.package:
+    name: "{{ package_name }}" #keepalived (default) or keepalived_specific_version
+    state: present
+  become: yes
+
+- name: start keepalived
+  ansible.builtin.service:
+    name: keepalived
+    state: started
+    enabled: yes
+  become: yes
